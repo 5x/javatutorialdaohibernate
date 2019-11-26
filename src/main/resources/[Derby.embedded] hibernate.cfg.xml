@@ -1,0 +1,41 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.DerbyTenSevenDialect
+        </property>
+
+        <property name="hibernate.connection.driver_class">
+            org.apache.derby.jdbc.EmbeddedDriver
+        </property>
+
+        <property name="hibernate.connection.url">
+            jdbc:derby:directory:D://derby-db//derby-data-storage;create=true
+        </property>
+
+        <property name="hibernate.connection.username">root</property>
+
+        <property name="hibernate.connection.password">root</property>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <property name="hibernate.show_sql">true</property>
+
+        <property name="hibernate.current_session_context_class">thread</property>
+
+
+        <mapping class="brewery.persistence.entities.Batch"/>
+        <mapping class="brewery.persistence.entities.BeerStyle"/>
+        <mapping class="brewery.persistence.entities.BusinessFactory"/>
+        <mapping class="brewery.persistence.entities.City"/>
+        <mapping class="brewery.persistence.entities.FactoryUnit"/>
+        <mapping class="brewery.persistence.entities.Trader"/>
+        <mapping class="brewery.persistence.entities.Warehouse"/>
+        <!--<mapping package="brewery.persistence.entities"/>-->
+
+    </session-factory>
+</hibernate-configuration>
